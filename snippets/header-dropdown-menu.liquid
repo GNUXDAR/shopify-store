@@ -99,5 +99,47 @@
         {%- endif -%}
       </li>
     {%- endfor -%}
+    <!-- Categorias -->
+    <li>
+      <header-menu>
+        <details id="Details-HeaderMenu-Cat">
+          <summary id="HeaderMenu-Cat" class="header__menu-item list-menu__item link focus-inset">
+            <span>Categorias</span>
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </summary>
+          <ul
+            id="HeaderMenu-MenuList-Cat"
+            class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+            role="list"
+            tabindex="-1"
+          >
+            <li>
+              <a
+                href="/collections/all"
+                class="header__menu-item list-menu__item link link--text focus-inset caption-large"
+              >
+                Todos los productos
+              </a>
+            </li>
+            <li>
+              <a
+                href="/collections/snowboard"
+                class="header__menu-item list-menu__item link link--text focus-inset caption-large"
+              >
+                Snowboard
+              </a>
+            </li>
+            <li>
+              <a
+                href="/collections/accesorios"
+                class="header__menu-item list-menu__item link link--text focus-inset caption-large"
+              >
+                Accesorios
+              </a>
+            </li>
+          </ul>
+        </details>
+      </header-menu>
+    </li>
   </ul>
 </nav>
