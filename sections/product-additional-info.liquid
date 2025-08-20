@@ -1,0 +1,125 @@
+{% comment %}
+  Seccion para mostrar informacion adicional del producto, como detalles de envio y politica de devoluciones
+{% endcomment %}
+
+<div class="product-additional-info page-width">
+  <h2>Envio y Devoluciones</h2>
+  <div class="product-additional-info__content">
+    <div class="product-additional-info__item">
+      <details class="product-additional-info__details" open>
+        <summary>&gt; Detalles de Envío</summary>
+        <p>
+          Envíos gratuitos en pedidos superiores a 50$. Tiempo de entrega estimado: 3-5 días hábiles. Mas informacion en
+          <br>
+          <a href="/pages/politica-de-envios-y-devoluciones">Politica de envio y devoluciones</a>
+        </p>
+      </details>
+    </div>
+    <div class="product-additional-info__item">
+      <details class="product-additional-info__details" open>
+        <summary>&gt; Política de Devoluciones</summary>
+        <p>
+          Aceptamos devoluciones en un plazo de 30 días. El producto debe estar en su estado original. Mas informacion
+          en <br>
+          <a href="/pages/politica-de-envios-y-devoluciones">Politica de envio y devoluciones</a>
+        </p>
+      </details>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Info Adicional Producto",
+  "tag": "section",
+  "class": "product-additional-info-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "shipping_details",
+      "label": "Detalles de Envío",
+      "default": "Envíos gratuitos en pedidos superiores a 50$. Tiempo de entrega estimado: 3-5 días hábiles."
+    },
+    {
+      "type": "text",
+      "id": "return_policy",
+      "label": "Política de Devoluciones",
+      "default": "Aceptamos devoluciones en un plazo de 30 días. El producto debe estar en su estado original."
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#ff6b6b"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Info Adicional Producto AC",
+      "category": "gnuxdar"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .product-additional-info {
+    {% comment %} background: #ff6b6b; {% endcomment %}
+    box-shadow: 0 5px 15px {{ section.settings.accent_color }};
+    padding: 20px 0;
+  }
+  .product-additional-info h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .product-additional-info:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 100%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: {{ section.settings.accent_color }};
+    border-radius: 2px;
+  }
+
+  .product-additional-info__content {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    border-radius: 10px;
+    margin: 4px;
+    {% comment %} box-shadow: 0 5px 2px {{ section.settings.accent_color }}; {% endcomment %}
+  }
+  .product-additional-info__item {
+    flex: 1;
+    max-width: 45%;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    {% comment %} text-decoration: none; {% endcomment %}
+  }
+  .product-additional-info__details {
+    {% comment %} text-decoration: underline; {% endcomment %}
+    {% comment %} border: 1px solid #ccc; {% endcomment %}
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    box-shadow: 0 5px 2px {{ section.settings.accent_color }};
+  }
+
+  {% comment %} media query para dispositivos moviles que se superpongan {% endcomment %}
+  @media screen and (max-width: 750px) {
+    .product-additional-info__content {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .product-additional-info__item {
+      max-width: 100%;
+    }
+  }
+</style>
