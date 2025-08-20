@@ -1,0 +1,129 @@
+.newsletter-section {
+    position: relative;
+    width: 100%;
+  }
+  
+  .newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .newsletter-content {
+    padding: 0 20px;
+  }
+  
+  .newsletter-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .newsletter-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+  
+  .newsletter-form-container {
+    margin-bottom: 2rem;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .input-group {
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .newsletter__input {
+    flex: 1;
+    min-height: 50px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    border-right: none;
+  }
+  
+  .newsletter__input:focus {
+    outline: none;
+    border-color: #ff6b6b;
+  }
+  
+  .input-group__btn {
+    display: flex;
+  }
+  
+  .newsletter__submit {
+    border-radius: 0 4px 4px 0;
+    min-height: 50px;
+    padding: 0 20px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .newsletter__submit svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .newsletter-message {
+    margin-top: 1rem;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+  }
+  
+  .newsletter-message.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .newsletter-message.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .newsletter-social {
+    margin-top: 2rem;
+  }
+  
+  /* mediaqueries */
+  @media (max-width: 768px) {
+    .newsletter-title {
+      font-size: 2rem;
+    }
+    
+    .input-group {
+      flex-direction: column;
+      max-width: 100%;
+    }
+    
+    .newsletter__input {
+      border-radius: 4px;
+      border-right: 1px solid #ddd;
+      margin-bottom: 10px;
+    }
+    
+    .newsletter__submit {
+      border-radius: 4px;
+      width: 100%;
+      justify-content: center;
+    }
+  }

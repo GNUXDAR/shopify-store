@@ -1,0 +1,203 @@
+{% comment %}
+  Formulario de suscripcion con integracion Mailchimp
+{% endcomment %}
+
+{{ 'newsletter-form.css' | asset_url | stylesheet_tag }}
+
+<div class="newsletter-section newsletter-section--{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">{{ section.settings.title | escape }}</h2>
+
+        {% if section.settings.subtitle != blank %}
+          <p class="newsletter-subtitle">{{ section.settings.subtitle | escape }}</p>
+        {% endif %}
+
+        <div class="newsletter-form-container">
+          <form
+            id="EmailSubscribeForm-{{ section.id }}"
+            class="newsletter-form"
+            data-mailchimp-url="{{ section.settings.mailchimp_url }}"
+          >
+            <div class="input-group">
+              <input
+                type="email"
+                name="email"
+                id="Email-{{ section.id }}"
+                class="input-group__field newsletter__input"
+                value="{% if customer %}{{ customer.email }}{% endif %}"
+                {% comment %}
+                  placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                  aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                {% endcomment %}
+                placeholder="Ingrese su correo aqui, ejmp: arturo@admin.com"
+                aria-label="Ingrese su correo aqui, ejmp: arturo@admin.com"
+                aria-required="true"
+                required
+                autocorrect="off"
+                autocapitalize="off"
+              >
+              <span class="input-group__btn">
+                <button
+                  type="submit"
+                  class="btn newsletter__submit"
+                  name="commit"
+                  {% comment %} aria-label="{{ 'general.newsletter_form.submit' | t }}" {% endcomment %}
+                  aria-label="Enviar"
+                >
+                  <span>Enviar</span>
+                  <svg
+                    class="icon icon-arrow-right"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </span>
+            </div>
+          </form>
+
+          <div class="newsletter-message" id="NewsletterMessage-{{ section.id }}"></div>
+        </div>
+
+        {% if section.settings.show_social_icons %}
+          <div class="newsletter-social">
+            {% render 'social-icons' %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .newsletter-section--{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .newsletter-section--{{ section.id }} .newsletter-title {
+    color: {{ section.settings.heading_color }};
+  }
+
+  .newsletter-section--{{ section.id }} .btn {
+    background-color: {{ section.settings.button_color }};
+    color: {{ section.settings.button_text_color }};
+  }
+
+  .newsletter-section--{{ section.id }} .btn:hover {
+    background-color: {{ section.settings.button_hover_color }};
+  }
+{% endstyle %}
+
+{% comment %} NO se pudo configurar... {% endcomment %}
+{% comment %} {{ 'newsletter-form.js' | asset_url | script_tag }} {% endcomment %}
+
+{% schema %}
+{
+  "name": "Form de suscripcion AC",
+  "tag": "section",
+  "class": "newsletter-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Suscríbete a nuestro boletín"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Recibe nuestras últimas noticias y promociones especiales."
+    },
+    {
+      "type": "text",
+      "id": "mailchimp_url",
+      "label": "URL de Mailchimp",
+      "info": "Pega aquí la URL de acción de tu formulario Mailchimp. Ej: https://usX.api.mailchimp.com/3.0/lists/lista-id/members",
+      "default": "https://mailchimp.us20.list-manage.com/subscribe/post?u=arturocabrera&amp;id=1234567890"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_icons",
+      "label": "Mostrar iconos sociales",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color de fondo",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color de texto",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color del título",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Color del botón",
+      "default": "#ff6b6b"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Color del texto del botón",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Color del botón (hover)",
+      "default": "#e05a5a"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espaciado superior",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espaciado inferior",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Form de suscripcion AC",
+      "category": "gnuxdar"
+    }
+  ]
+}
+{% endschema %}
