@@ -1,0 +1,28 @@
+.card-wrapper.product-card-wrapper.underline-links-hover {
+    box-shadow: 0 5px 15px #ff6b6b;
+    animation: none;
+    opacity: 1;
+    transform: inherit;
+}
+
+.card-wrapper.product-card-wrapper.underline-links-hover:hover {
+    transform: translateY(-5px);
+    /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
+    box-shadow: 0 5px 15px rgb(107, 196, 255);
+}
+.card-wrapper.product-card-wrapper.underline-links-hover h3 {
+    font-family: Montserrat, Courier, monospace;
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    padding: 1rem;
+}
+
+.card-wrapper.product-card-wrapper.underline-links-hover .price {
+    font-family: Montserrat, Courier, monospace;
+    font-size: 1.5rem;
+    color: rgb(0, 152, 254);
+    padding: 1rem;
+}
+.car__content . .card__information .card__heading h5 {
+    
+}

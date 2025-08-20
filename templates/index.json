@@ -77,12 +77,12 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Productos Populares",
         "heading_size": "h2",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "show_view_all": false,
         "swipe_on_mobile": false,
         "image_ratio": "adapt",
@@ -94,6 +94,27 @@
         "padding_bottom": 36
       }
     },
+    "popular_products": {
+      "type": "popular-products",
+      "settings": {
+        "title": "Productos Populares",
+        "heading_size": "h2",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "show_view_all": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+
     "collage": {
       "type": "collage",
       "blocks": {
@@ -132,19 +153,19 @@
         "padding_bottom": 36
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
+    // "video": {
+    //   "type": "video",
+    //   "settings": {
+    //     "heading": "",
+    //     "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+    //     "heading_size": "h1",
+    //     "description": "",
+    //     "full_width": false,
+    //     "color_scheme": "scheme-1",
+    //     "padding_top": 36,
+    //     "padding_bottom": 36
+    //   }
+    // },
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
@@ -203,8 +224,9 @@
     "image_banner",
     "rich_text",
     "featured_collection",
+    "popular_products",
     "collage",
-    "video",
+    // "video",
     "multicolumn"
   ]
 }
