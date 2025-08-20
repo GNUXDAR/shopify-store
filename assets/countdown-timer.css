@@ -1,0 +1,117 @@
+.countdown-timer-section {
+    margin-bottom: 30px;
+  }
+  
+  .countdown-timer {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--background-color, #f8f8f8);
+    color: var(--text-color, #FFB6C1);
+    /* border-radius: 12px; */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .countdown-timer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #ff6b6b, #6bc4ff, #ff6b6b);
+    background-size: 200% 100%;
+    animation: gradientMove 3s linear infinite;
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+  
+  .countdown-timer h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--text-color, #FFB6C1);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .countdown-item {
+    font-size: 1.2em;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    /* border-radius: 10px; */
+    min-width: 100px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .countdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .countdown-item span {
+    display: block;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  
+  .countdown-expired {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    /* border-radius: 10px; */
+    display: inline-block;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .countdown-timer {
+      padding: 40px 15px;
+    }
+    
+    .countdown-timer h2 {
+      font-size: 2em;
+    }
+    
+    .countdown-item {
+      min-width: 80px;
+      padding: 12px;
+    }
+    
+    .countdown-item span {
+      font-size: 2em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .countdown-container {
+      gap: 10px;
+    }
+    
+    .countdown-item {
+      min-width: 70px;
+      font-size: 1em;
+      padding: 10px;
+    }
+    
+    .countdown-item span {
+      font-size: 1.8em;
+    }
+  }

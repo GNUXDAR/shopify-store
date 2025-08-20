@@ -1,0 +1,69 @@
+{% comment %}
+  Cronometros de Ofertas, tiempo de validez de promociones
+{% endcomment %}
+{%- style -%}
+  .countdown-timer-section-{{ section.id }} {
+    --background-color: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+  }
+{%- endstyle -%}
+
+{{ 'countdown-timer.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="countdown-timer-section-{{ section.id }} countdown-timer-section"
+  data-end-date="{{ section.settings.end_date }}"
+  data-expired-text="{{ section.settings.expired_text | escape }}"
+>
+  <div class="countdown-timer">
+    <h2>{{ section.settings.title | escape }}</h2>
+    <div class="countdown-container"></div>
+  </div>
+</div>
+
+{{ 'countdown-timer.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "Countdown Timer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "¡Oferta por Tiempo Limitado!"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "End Date (YYYY-MM-DD HH:MM:SS)",
+      "info": "Set the date and time for the countdown to end. Format: YYYY-MM-DD HH:MM:SS",
+      "default": "2025-12-31 23:59:59"
+    },
+    {
+      "type": "text",
+      "id": "expired_text",
+      "label": "Expired Text",
+      "default": "¡La oferta ha expirado!"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#242833"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FF6B6B"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Countdown Timer AC",
+      "category": "gnuxdar"
+    }
+  ]
+}
+{% endschema %}

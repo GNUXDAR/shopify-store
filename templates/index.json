@@ -135,6 +135,17 @@
         "padding_bottom": 36
       }
     },
+    // Contador
+    "countdown_timer": {
+      "type": "countdown-timer",
+      "settings": {
+        "title": "¡Oferta por tiempo limitado!",
+        "end_date": "2025-12-31 23:59:59",
+        "expired_text": "La oferta ha expirado",
+        "background_color": "#2E2E2E",
+        "text_color": "#FFFFFF"
+      }
+    },
     "collage": {
       "type": "collage",
       "blocks": {
@@ -244,6 +255,7 @@
     "image_banner",
     "rich_text",
     "featured_collection",
+    "countdown_timer",
     "popular_products",
     "featured_collection_specials",
     "collage",
