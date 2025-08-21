@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -34,15 +43,17 @@
         "text",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
+        "image_behavior": "none",
         "desktop_content_position": "bottom-center",
-        "show_text_box": false,
         "desktop_content_alignment": "center",
+        "show_text_box": false,
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
@@ -52,14 +63,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "<strong>Enfocado en pasión y dedicación</strong>",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p><strong>Con cada línea de código, pongo el corazón</strong></p><p><em>Esta prueba no es solo un ejercicio técnico; es una muestra de mi dedicación.</em></p>"
           }
         }
       },
@@ -68,6 +79,8 @@
         "text"
       ],
       "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
@@ -76,74 +89,116 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
-        "title": "Productos Populares",
-        "heading_size": "h2",
         "collection": "all",
         "products_to_show": 8,
+        "title": "Productos Populares",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
-        "color_scheme": "scheme-2",
+        "enable_desktop_slider": false,
+        "full_width": false,
         "show_view_all": false,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-2",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
+      }
+    },
+    "newsletter_form_FfxLnf": {
+      "type": "newsletter-form",
+      "name": "Form de suscripcion AC",
+      "settings": {
+        "title": "Suscríbete a nuestro boletín",
+        "subtitle": "Recibe nuestras últimas noticias y promociones especiales.",
+        "mailchimp_url": "https://mailchimp.us20.list-manage.com/subscribe/post?u=arturocabrera&id=1234567890",
+        "show_social_icons": true,
+        "background_color": "#f8f8f8",
+        "text_color": "#333333",
+        "heading_color": "#000000",
+        "button_color": "#ff6b6b",
+        "button_text_color": "#ffffff",
+        "button_hover_color": "#e05a5a",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "countdown_timer_W8tdhY": {
+      "type": "countdown-timer",
+      "name": "Countdown Timer AC",
+      "settings": {
+        "title": "¡Oferta por Tiempo Limitado!",
+        "end_date": "2025-09-31 23:59:59",
+        "expired_text": "¡La oferta ha expirado!",
+        "background_color": "#242833",
+        "text_color": "#FF6B6B"
       }
     },
     "popular_products": {
       "type": "popular-products",
       "settings": {
-        "title": "Productos Populares",
-        "heading_size": "h2",
         "collection": "all",
         "products_to_show": 8,
+        "title": "Productos Populares",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
-        "color_scheme": "scheme-2",
+        "enable_desktop_slider": false,
+        "full_width": false,
         "show_view_all": false,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-2",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
       }
     },
-    // Ofertas Especiales
     "featured_collection_specials": {
       "type": "featured-collection",
       "settings": {
-        "title": "Ofertas Especiales",
-        "heading_size": "h2",
         "collection": "all",
         "products_to_show": 4,
+        "title": "Ofertas Especiales",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
-        "color_scheme": "scheme-3",
+        "enable_desktop_slider": false,
+        "full_width": false,
         "show_view_all": true,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-3",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
-      }
-    },
-    // Contador
-    "countdown_timer": {
-      "type": "countdown-timer",
-      "settings": {
-        "title": "¡Oferta por tiempo limitado!",
-        "end_date": "2025-12-31 23:59:59",
-        "expired_text": "La oferta ha expirado",
-        "background_color": "#2E2E2E",
-        "text_color": "#FFFFFF"
       }
     },
     "collage": {
@@ -179,24 +234,12 @@
         "heading_size": "h2",
         "desktop_layout": "left",
         "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    // "video": {
-    //   "type": "video",
-    //   "settings": {
-    //     "heading": "",
-    //     "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-    //     "heading_size": "h1",
-    //     "description": "",
-    //     "full_width": false,
-    //     "color_scheme": "scheme-1",
-    //     "padding_top": 36,
-    //     "padding_bottom": 36
-    //   }
-    // },
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
@@ -204,7 +247,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -213,7 +256,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -222,7 +265,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -238,14 +281,14 @@
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -255,11 +298,11 @@
     "image_banner",
     "rich_text",
     "featured_collection",
-    "countdown_timer",
+    "newsletter_form_FfxLnf",
+    "countdown_timer_W8tdhY",
     "popular_products",
     "featured_collection_specials",
     "collage",
-    // "video",
     "multicolumn"
   ]
 }
