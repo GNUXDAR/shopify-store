@@ -1,0 +1,5 @@
+[environments.env1]
+theme = "147115573437"
+store = "gnuxdar"
+password  = "mawcki"
+ignore = "sections/header.liquid"
