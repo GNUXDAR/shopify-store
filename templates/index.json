@@ -142,7 +142,7 @@
         "end_date": "2025-09-31 23:59:59",
         "expired_text": "¡La oferta ha expirado!",
         "background_color": "#242833",
-        "text_color": "#FF6B6B"
+        "text_color": "#ff6b6b"
       }
     },
     "popular_products_RA9EYT": {
@@ -294,6 +294,110 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "feature_stack_8QrDnR": {
+      "type": "feature-stack",
+      "blocks": {
+        "feature_group_bPCGAP": {
+          "type": "feature_group",
+          "settings": {
+            "column": "left",
+            "layer_id": "ai",
+            "has_arrow": true,
+            "title": "AI Services",
+            "description": "Inference endpoints, fine-tuning workflows, and a unified workbench for prompt engineering.",
+            "item1_label": "Inference Endpoints",
+            "item1_text": "Lanza inferencia en minutos eliminando la gestión de clusters.",
+            "item2_label": "Fine-Tuning",
+            "item2_text": "",
+            "item3_label": "Prompt Workbench",
+            "item3_text": ""
+          }
+        },
+        "feature_group_9By7EL": {
+          "type": "feature_group",
+          "settings": {
+            "column": "left",
+            "layer_id": "infra",
+            "has_arrow": true,
+            "title": "Infrastructure Services",
+            "description": "Backbone de alta velocidad y baja latencia para AI y HPC.",
+            "item1_label": "Compute",
+            "item1_text": "",
+            "item2_label": "Storage",
+            "item2_text": "",
+            "item3_label": "Networking",
+            "item3_text": ""
+          }
+        },
+        "feature_group_VKFhxC": {
+          "type": "feature_group",
+          "settings": {
+            "column": "left",
+            "layer_id": "fleet",
+            "layer_image": "shopify://shop_images/rive-stack-is-dc.png",
+            "has_arrow": true,
+            "title": "Fleet Operations",
+            "description": "Telemetría, control de configuración y monitoreo de salud a escala.",
+            "item1_label": "Control Center",
+            "item1_text": "",
+            "item2_label": "Observability",
+            "item2_text": "",
+            "item3_label": "Radar API",
+            "item3_text": ""
+          }
+        },
+        "feature_group_QN6d3k": {
+          "type": "feature_group",
+          "settings": {
+            "column": "right",
+            "layer_id": "platform",
+            "layer_image": "shopify://shop_images/rive-stack-is-ai.png",
+            "has_arrow": true,
+            "title": "Platform Services",
+            "description": "Instancias disponibles como VMs o bare metal con orquestación Kubernetes.",
+            "item1_label": "Managed Slurm",
+            "item1_text": "",
+            "item2_label": "Kubernetes Service",
+            "item2_text": "",
+            "item3_label": "Virtual Machines",
+            "item3_text": ""
+          }
+        },
+        "feature_group_enKCh4": {
+          "type": "feature_group",
+          "settings": {
+            "column": "right",
+            "layer_id": "dc",
+            "layer_image": "shopify://shop_images/rive-stack-is-infra.png",
+            "has_arrow": true,
+            "title": "Data Centers",
+            "description": "Centros de datos soberanos, sostenibles y modulares en todo el mundo.",
+            "item1_label": "AI Factories",
+            "item1_text": "",
+            "item2_label": "",
+            "item2_text": "",
+            "item3_label": "",
+            "item3_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_group_bPCGAP",
+        "feature_group_9By7EL",
+        "feature_group_VKFhxC",
+        "feature_group_QN6d3k",
+        "feature_group_enKCh4"
+      ],
+      "name": "Feature Stack",
+      "settings": {
+        "title": "A complete AI cloud platform",
+        "subtitle": "Deploy AI on infrastructure designed for scale, resilience, and speed.",
+        "button_label": "",
+        "button_url": "",
+        "center_image": "shopify://shop_images/rive-stack-default.png",
+        "center_image_alt": ""
+      }
     }
   },
   "order": [
@@ -305,6 +409,7 @@
     "popular_products_RA9EYT",
     "featured_collection_specials",
     "collage",
-    "multicolumn"
+    "multicolumn",
+    "feature_stack_8QrDnR"
   ]
 }
