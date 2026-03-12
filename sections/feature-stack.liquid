@@ -1,0 +1,348 @@
+{% comment %}
+  Feature Stack Section — Inspirado en Nscale.com
+  Columnas: Izquierda (3 grupos) | Centro (imagen) | Derecha (2 grupos)
+{% endcomment %}
+
+{{ 'feature-stack.css' | asset_url | stylesheet_tag }}
+
+<div class="section-feature-stack">
+  <div class="fs-background">
+    <div class="fs-inner">
+      {%- comment %} TÍTULO CENTRAL {%- endcomment %}
+      <div class="fs-title-wrap">
+        <h2 class="fs-title">{{ section.settings.title }}</h2>
+        <p class="fs-subtitle">{{ section.settings.subtitle }}</p>
+        {% if section.settings.button_label != blank %}
+          <a href="{{ section.settings.button_url }}" class="fs-button"> {{ section.settings.button_label }} → </a>
+        {% endif %}
+      </div>
+      {%- comment %} GRID PRINCIPAL {%- endcomment %}
+      <div class="fs-wrapper">
+        {%- comment %} COLUMNA IZQUIERDA {%- endcomment %}
+        <div class="fs-left-col">
+          {% for block in section.blocks %}
+            {% if block.settings.column == 'left' %}
+              <div class="fs-content-wrap" data-layer="{{ block.settings.layer_id }}" {{ block.shopify_attributes }}>
+                {% if block.settings.has_arrow %}
+                  <div class="fs-arrow fs-arrow-right">
+                    <svg width="60" viewBox="0 0 74 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M55.4775 0.518555V0H55.6583L55.7999 0.112535L55.4775 0.518555ZM73.1055 14.5173L67.1837 13.6371L70.5918 11.5L73.1055 14.5173ZM0 1H55.4775V0H0V1ZM55.7999 0.112535L72.7831 13.6116L72.428 14.4231L55.155 0.924575L55.7999 0.112535Z" fill="white"/>
+                    </svg>
+                  </div>
+                {% endif %}
+                <h3 class="fs-h3">{{ block.settings.title }}</h3>
+                <p class="fs-desc">{{ block.settings.description }}</p>
+                <div class="fs-accordion-wrapper">
+                  {% if block.settings.item1_label != blank %}
+                    <div class="fs-accordion-item">
+                      <button class="fs-accordion-trigger" aria-expanded="false">
+                        <h5 class="fs-list-heading">{{ block.settings.item1_label }}</h5>
+                        <div class="fs-plus"><span class="fs-h-line"></span><span class="fs-v-line"></span></div>
+                      </button>
+                      <div class="fs-accordion-content">
+                        <p class="fs-accordion-text">{{ block.settings.item1_text }}</p>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.item2_label != blank %}
+                    <div class="fs-accordion-item">
+                      <button class="fs-accordion-trigger" aria-expanded="false">
+                        <h5 class="fs-list-heading">{{ block.settings.item2_label }}</h5>
+                        <div class="fs-plus"><span class="fs-h-line"></span><span class="fs-v-line"></span></div>
+                      </button>
+                      <div class="fs-accordion-content">
+                        <p class="fs-accordion-text">{{ block.settings.item2_text }}</p>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.item3_label != blank %}
+                    <div class="fs-accordion-item">
+                      <button class="fs-accordion-trigger" aria-expanded="false">
+                        <h5 class="fs-list-heading">{{ block.settings.item3_label }}</h5>
+                        <div class="fs-plus"><span class="fs-h-line"></span><span class="fs-v-line"></span></div>
+                      </button>
+                      <div class="fs-accordion-content">
+                        <p class="fs-accordion-text">{{ block.settings.item3_text }}</p>
+                      </div>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {%- comment %} IMAGEN CENTRAL {%- endcomment %}
+        <div class="fs-center-col">
+          {% if section.settings.center_image != blank %}
+            <img
+              src="{{ section.settings.center_image | img_url: '800x' }}"
+              alt="{{ section.settings.center_image_alt | default: 'Platform stack' }}"
+              class="fs-center-image"
+              loading="lazy"
+              width="466"
+              height="619"
+            >
+          {% endif %}
+          {%- comment %} Capas de imagen por hover — una imagen por layer_id {%- endcomment %}
+          {% for block in section.blocks %}
+            {% if block.settings.layer_image != blank %}
+              <img
+                src="{{ block.settings.layer_image | img_url: '800x' }}"
+                alt=""
+                class="fs-layer-image"
+                data-layer="{{ block.settings.layer_id }}"
+                loading="lazy"
+              >
+            {% endif %}
+          {% endfor %}
+        </div>
+        {%- comment %} COLUMNA DERECHA {%- endcomment %}
+        <div class="fs-right-col">
+          {% for block in section.blocks %}
+            {% if block.settings.column == 'right' %}
+              <div class="fs-content-wrap" data-layer="{{ block.settings.layer_id }}" {{ block.shopify_attributes }}>
+                {% if block.settings.has_arrow %}
+                  <div class="fs-arrow fs-arrow-left">
+                    <svg width="60" viewBox="0 0 74 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.5225 0.518555V0H18.3417L18.2001 0.112535L18.5225 0.518555ZM0.894531 14.5173L6.81628 13.6371L3.40818 11.5L0.894531 14.5173ZM74 1H18.5225V0H74V1ZM18.2001 0.112535L1.21693 13.6116L1.572 14.4231L18.845 0.924575L18.2001 0.112535Z" fill="white"/>
+                    </svg>
+                  </div>
+                {% endif %}
+                <h3 class="fs-h3">{{ block.settings.title }}</h3>
+                <p class="fs-desc">{{ block.settings.description }}</p>
+                <div class="fs-accordion-wrapper">
+                  {% if block.settings.item1_label != blank %}
+                    <div class="fs-accordion-item">
+                      <button class="fs-accordion-trigger" aria-expanded="false">
+                        <h5 class="fs-list-heading">{{ block.settings.item1_label }}</h5>
+                        <div class="fs-plus"><span class="fs-h-line"></span><span class="fs-v-line"></span></div>
+                      </button>
+                      <div class="fs-accordion-content">
+                        <p class="fs-accordion-text">{{ block.settings.item1_text }}</p>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.item2_label != blank %}
+                    <div class="fs-accordion-item">
+                      <button class="fs-accordion-trigger" aria-expanded="false">
+                        <h5 class="fs-list-heading">{{ block.settings.item2_label }}</h5>
+                        <div class="fs-plus"><span class="fs-h-line"></span><span class="fs-v-line"></span></div>
+                      </button>
+                      <div class="fs-accordion-content">
+                        <p class="fs-accordion-text">{{ block.settings.item2_text }}</p>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.item3_label != blank %}
+                    <div class="fs-accordion-item">
+                      <button class="fs-accordion-trigger" aria-expanded="false">
+                        <h5 class="fs-list-heading">{{ block.settings.item3_label }}</h5>
+                        <div class="fs-plus"><span class="fs-h-line"></span><span class="fs-v-line"></span></div>
+                      </button>
+                      <div class="fs-accordion-content">
+                        <p class="fs-accordion-text">{{ block.settings.item3_text }}</p>
+                      </div>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {%- comment %} /fs-wrapper {%- endcomment %}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'feature-stack.js' | asset_url }}" defer></script>
+
+{%- comment %} ===== SCHEMA ===== {%- endcomment %}
+{% schema %}
+{
+  "name": "Feature Stack",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título principal",
+      "default": "A complete AI cloud platform"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Deploy AI on infrastructure designed for scale, resilience, and speed."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "URL del botón"
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "Imagen central (stack isométrico)"
+    },
+    {
+      "type": "text",
+      "id": "center_image_alt",
+      "label": "Alt de imagen central"
+    },
+    {
+      "type": "image_picker",
+      "id": "noise_texture",
+      "label": "Textura de ruido (opcional, overlay)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_group",
+      "name": "Grupo de Features",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Columna",
+          "options": [
+            { "value": "left", "label": "Izquierda" },
+            { "value": "right", "label": "Derecha" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "layer_id",
+          "label": "ID de capa (para hover en imagen)",
+          "info": "Ej: ai, infra, fleet, platform, dc"
+        },
+        {
+          "type": "image_picker",
+          "id": "layer_image",
+          "label": "Imagen de capa (visible al hacer hover)"
+        },
+        {
+          "type": "checkbox",
+          "id": "has_arrow",
+          "label": "Mostrar flecha conectora",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título del grupo",
+          "default": "AI Services"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Descripción del grupo"
+        },
+        {
+          "type": "text",
+          "id": "item1_label",
+          "label": "Item 1 — Título"
+        },
+        {
+          "type": "textarea",
+          "id": "item1_text",
+          "label": "Item 1 — Descripción"
+        },
+        {
+          "type": "text",
+          "id": "item2_label",
+          "label": "Item 2 — Título"
+        },
+        {
+          "type": "textarea",
+          "id": "item2_text",
+          "label": "Item 2 — Descripción"
+        },
+        {
+          "type": "text",
+          "id": "item3_label",
+          "label": "Item 3 — Título"
+        },
+        {
+          "type": "textarea",
+          "id": "item3_text",
+          "label": "Item 3 — Descripción"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Stack",
+      "blocks": [
+        {
+          "type": "feature_group",
+          "settings": {
+            "column": "left",
+            "layer_id": "ai",
+            "title": "AI Services",
+            "description": "Inference endpoints, fine-tuning workflows, and a unified workbench for prompt engineering.",
+            "item1_label": "Inference Endpoints",
+            "item1_text": "Lanza inferencia en minutos eliminando la gestión de clusters.",
+            "item2_label": "Fine-Tuning",
+            "item3_label": "Prompt Workbench"
+          }
+        },
+        {
+          "type": "feature_group",
+          "settings": {
+            "column": "left",
+            "layer_id": "infra",
+            "title": "Infrastructure Services",
+            "description": "Backbone de alta velocidad y baja latencia para AI y HPC.",
+            "item1_label": "Compute",
+            "item2_label": "Storage",
+            "item3_label": "Networking"
+          }
+        },
+        {
+          "type": "feature_group",
+          "settings": {
+            "column": "left",
+            "layer_id": "fleet",
+            "title": "Fleet Operations",
+            "description": "Telemetría, control de configuración y monitoreo de salud a escala.",
+            "item1_label": "Control Center",
+            "item2_label": "Observability",
+            "item3_label": "Radar API"
+          }
+        },
+        {
+          "type": "feature_group",
+          "settings": {
+            "column": "right",
+            "layer_id": "platform",
+            "title": "Platform Services",
+            "description": "Instancias disponibles como VMs o bare metal con orquestación Kubernetes.",
+            "item1_label": "Managed Slurm",
+            "item2_label": "Kubernetes Service",
+            "item3_label": "Virtual Machines"
+          }
+        },
+        {
+          "type": "feature_group",
+          "settings": {
+            "column": "right",
+            "layer_id": "dc",
+            "title": "Data Centers",
+            "description": "Centros de datos soberanos, sostenibles y modulares en todo el mundo.",
+            "item1_label": "AI Factories"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

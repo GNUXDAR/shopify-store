@@ -1,0 +1,322 @@
+/* ============================================================
+   Feature Stack Section
+   ============================================================ */
+
+.section-feature-stack {
+  isolation: isolate;
+  position: relative;
+}
+
+.fs-background {
+  background-image: radial-gradient(circle at -10% -10%, #070d9e 24%, #2eb5c7);
+  padding: 7.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Textura de ruido opcional */
+.fs-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fs-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Título ---- */
+.fs-title-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 48.875rem;
+  margin: 0 auto 4rem;
+  color: #fff;
+}
+
+.fs-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.fs-subtitle {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.fs-button {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+  border-radius: 2px;
+}
+
+.fs-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+/* ---- Grid ---- */
+.fs-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---- Columnas lateral ---- */
+.fs-left-col,
+.fs-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ---- Columna central ---- */
+.fs-center-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fs-center-image {
+  width: 100%;
+  max-width: 466px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Capas de imagen (hover) ---- */
+.fs-layer-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fs-layer-image.is-active {
+  opacity: 1;
+}
+
+/* ---- Content wrap ---- */
+.fs-content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  color: #fff;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+  cursor: default;
+}
+
+.fs-content-wrap:hover,
+.fs-content-wrap.is-active {
+  opacity: 1;
+}
+
+/* Dimming de los no activos al hacer hover en la sección */
+.section-feature-stack.has-hover .fs-content-wrap:not(.is-active) {
+  opacity: 0.2;
+}
+
+.fs-h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.25;
+  margin: 0;
+  font-weight: 700;
+}
+
+.fs-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ---- Flecha decorativa ---- */
+.fs-arrow {
+  position: absolute;
+  top: 12%;
+}
+
+.fs-arrow-right {
+  right: 0;
+  transform: translateX(125%);
+}
+
+.fs-arrow-left {
+  left: 0;
+  transform: translateX(-125%);
+}
+
+/* ---- Acordeón ---- */
+.fs-accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.fs-accordion-item {
+  width: 100%;
+}
+
+.fs-accordion-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 0 0 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.fs-list-heading {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.fs-plus {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.fs-h-line,
+.fs-v-line {
+  display: block;
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fs-h-line {
+  width: 1rem;
+  height: 1px;
+}
+
+.fs-v-line {
+  width: 1px;
+  height: 1rem;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.fs-accordion-trigger[aria-expanded='true'] .fs-v-line {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+/* Contenido del acordeón — animado con max-height */
+.fs-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease;
+}
+
+.fs-accordion-content.is-open {
+  max-height: 300px;
+  padding: 0.5rem 0;
+}
+
+.fs-accordion-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 990px) {
+  .fs-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .fs-center-col {
+    order: -1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .fs-arrow {
+    display: none;
+  }
+
+  .fs-content-wrap {
+    opacity: 1;
+  }
+
+  /* Desactivar dimming en tablet/móvil */
+  .section-feature-stack.has-hover .fs-content-wrap:not(.is-active) {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  .fs-background {
+    padding: 4rem 0;
+  }
+
+  .fs-title-wrap {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1441px) {
+  .fs-inner {
+    max-width: 1440px;
+  }
+
+  .fs-wrapper {
+    gap: 6rem;
+  }
+}
